@@ -23,5 +23,5 @@ export interface Emotion {
   id: string;
   emotion: EmotionType;
   note: string;
-  data: string;
+  date: string;
 }
