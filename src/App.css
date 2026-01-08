@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   background-color: #f8f9fa;
   color: #333;
   display: flex;
@@ -48,14 +48,14 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.emotion-options input[type='radio'] {
+.emotion-options input[type="radio"] {
   appearance: none;
   width: 0;
   height: 0;
   margin: 0;
 }
 
-.emotion-options input[type='radio']:checked + label {
+.emotion-options input[type="radio"]:checked + label {
   outline: 2px solid #ffc338;
   border-radius: 6px;
   outline-offset: 2px;
@@ -164,4 +164,20 @@ li .date {
   margin: 2rem 0;
   text-align: center;
   width: 100%;
+}
+
+.filtered-list {
+  margin-top: 1rem;
+}
+
+.filtered-list li {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 0.6rem;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }

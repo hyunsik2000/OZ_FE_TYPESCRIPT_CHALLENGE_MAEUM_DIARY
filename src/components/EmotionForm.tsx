@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { emotionIcons } from "../data/emotions";
 import type { Emotion, EmotionType } from "../types";
+import { v4 as randId } from "uuid";
 
 interface Props {
   onAdd: (newEmotion: Emotion) => void;
@@ -14,16 +15,15 @@ export default function EmotionForm({ onAdd }: Props) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // 아래 구조를 참고해서 Emotion 객체를 완성해보세요.
-    // const newEmotion: Emotion = {
-    //    id: ...,
-    //    emotion: ...,
-    //    note: ...,
-    //    date: ...,
-    // };
+    const newEmotion: Emotion = {
+      id: randId(),
+      emotion: selected,
+      note: note,
+      date: new Date().toISOString().slice(0, 10),
+    };
 
-    // 일기를 기록하고, 입력을 초기화하세요.
-    // HINT: onAdd, setNote
+    onAdd(newEmotion);
+    setNote("");
   };
 
   return (
@@ -46,13 +46,11 @@ export default function EmotionForm({ onAdd }: Props) {
           );
         })}
       </div>
-
       <textarea
         value={note}
         onChange={(e) => setNote(e.target.value)}
         placeholder="오늘 하루 어땠나요?"
       />
-
       <button type="submit">기록하기</button>
     </form>
   );
